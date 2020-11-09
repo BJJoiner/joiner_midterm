@@ -24,7 +24,7 @@ app.get('/', function(req, res){
 
 app.get('/xkcd', function(req, res){ 
     function numGenerator(){
-    let numRandom = Math.random();
+    let numRandom = Math.random() * (2000 +1) + 1;
     return Math.floor(numRandom);
 };
     let num = numGenerator();
