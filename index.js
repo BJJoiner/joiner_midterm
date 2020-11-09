@@ -27,8 +27,8 @@ app.get('/xkcd', function(req, res){
     let numRandom = Math.random() * (2000 +1) + 1;
     return Math.floor(numRandom);
 };
-    let num = numGenerator();
-    fetch('https://xkcd.com/' +num + '/info.0.json',)
+    let number = numGenerator();
+    fetch('https://xkcd.com/' +number + '/info.0.json',)
     .then(res => res.json())
     .then(data => {
         res.render('xkcd', {data:data});
@@ -36,6 +36,6 @@ app.get('/xkcd', function(req, res){
 })
 
 
-app.listen(port,function(){
+app.listen(port, function(){
     console.log('listening on ' + port)
 });
