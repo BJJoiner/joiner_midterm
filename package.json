@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/BJJoiner/joiner_midterm#readme",
   "engines": {
-      "node": "12.x"
+    "node": "12.x"
   },
   "dependencies": {
     "ejs": "^3.1.5",
