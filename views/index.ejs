@@ -8,10 +8,12 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
+    <link rel="stylesheet" type="text/css" href="public/style.css">
+
     <title>Daily Comics</title>
   </head>
-  <body>
-     <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <body style="background-color: yellow;">
+     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
         <a class="navbar-brand" href="#">Comics</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -22,19 +24,21 @@
                 <a class="nav-link" href="/">Homepage <span class="sr-only" th:if="${content} == 'home'"></span></a>
             </li>
             <li class="nav-item" th:classappend="${content} == 'contact' ? 'active' : ''">
-                <a class="nav-link" href="/xkcd">Comic of the Day <span class="sr-only" th:if="${content} == 'xkcd'"></span></a>
+                <a class="nav-link" href="/xkcd">The Comic Times <span class="sr-only" th:if="${content} == 'xkcd'"></span></a>
             </li>
             </ul>
         </div>
     </nav>
-    <div class="jumbotron">
+   <b><div class="jumbotron" style="background-color: green;"">
         <h1 class="display-4"></h1>
-        <p class="lead">Comic of the day</p>
+        <p class="lead"><b>Comic of the day</b></p>
         <hr class="my-4">
-        <p>Check out the latest comics</p>
-    </div>
-    
-    <img src="<%=data.img%>" alt="<%= data.alt %>">
+        <p> Date: <%= data.month %>  /  <%= data.day %>  / <%= data.year %> </p>
+        <p> Comic:  <%= data.num %> </p>
+        <p> Title: <%= data.safe_title %></p></b>
+    </div></b>
+    <center><p> <%= data.alt %> <p>
+    <img src="<%=data.img%>""><center>
    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>

@@ -2,15 +2,15 @@ var express = require('express');
 
 var bodyParser = require ("body-parser");
 
-var fetch = require('node-fetch');
-
 var app = express();
+
+var fetch = require('node-fetch');
 
 const port = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs');
 
-app.use(express.static("Public"));
+app.use(express.static("public"));
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -24,7 +24,7 @@ app.get('/', function(req, res){
 
 app.get('/xkcd', function(req, res){ 
     function numGenerator(){
-    let numRandom = Math.random() * (2000 +1) + 1;
+    let numRandom = Math.random() * (100 +1) + 1;
     return Math.floor(numRandom);
 };
     let number = numGenerator();
